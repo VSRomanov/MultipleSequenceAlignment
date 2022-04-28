@@ -129,7 +129,7 @@ Sequences to align 1:\
 &nbsp;&nbsp;&nbsp;&nbsp;ATGTTGCACaACGCAGCCCT\
 &nbsp;&nbsp;&nbsp;&nbsp;TgTtGCaCAACTCAGCCAtA\
 &nbsp;&nbsp;&nbsp;&nbsp;ATGTGCAACGCAgCCcTA
-```bash
+```
 ATGTTGCACaACGCAGCCCT-
 ATG-TGCA--ACGCAgCCcTA
 -TgTtGCaCAACTCAGCCAtA
@@ -141,7 +141,7 @@ Sequences to align 2:\
 &nbsp;&nbsp;&nbsp;&nbsp;gene:GGCACCATAACACTTGTCACGTACTGG...protein:GTITLVTYW\
 &nbsp;&nbsp;&nbsp;&nbsp;gene:GGCACGATAAGTTCTTTAGAAACGCAATGG...protein:GTISSLETQW\
 &nbsp;&nbsp;&nbsp;&nbsp;gene:GGCACCAAAACGTTAAGGCCTACATACTGG...protein:GTKTLRPTYW
-```bash
+```
 gene:GGCACCATAA---CACT--TGTC-ACGTACTGG...protein:GTI-TL-VTYW
 gene:GGCACCAAAA---CGTTAAGGCCTACATACTGG...protein:GTK-TLRPTYW
 gene:GGCACGATAAGTTCTTT--AGAA-ACGCAATGG...protein:GTISSL-ETQW
@@ -154,7 +154,7 @@ Sequences to align 3:\
 &nbsp;&nbsp;&nbsp;&nbsp;2345678901\
 &nbsp;&nbsp;&nbsp;&nbsp;3456789012\
 &nbsp;&nbsp;&nbsp;&nbsp;4567x90123
-```bash
+```
 1234567890---
 -2345678901--
 --3456789012-
@@ -168,7 +168,7 @@ Sequences to align 4:\
 &nbsp;&nbsp;&nbsp;&nbsp;2.Do_you_see_if_it_works_fine?..\
 &nbsp;&nbsp;&nbsp;&nbsp;3.It's_fine!!!\
 &nbsp;&nbsp;&nbsp;&nbsp;4.You_see?_It_is_fine!..
-```bash
+```
 1.-Let's_see_if_it_works-----...
 2.Do_you_see_if_it_works_fine?..
 4.---You_see--?_It_---is_fine!..

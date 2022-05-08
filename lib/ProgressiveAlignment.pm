@@ -305,9 +305,7 @@ sub distance {
 	
 	for (my $i=0; $i<scalar(@{$alignment_ref});$i++) {
 		if (($alignment_ref->[$i][0] ne "-") && ($alignment_ref->[$i][1] ne "-")){
-	#		print $alignment_ref->[$comparison_column][0], $alignment_ref->[$comparison_column][1], "\n";
 	  		if ($alignment_ref->[$i][0] eq $alignment_ref->[$i][1]) {
-	#  					print ${$alignment_ref}[$comparison_column][0], " = ", ${$alignment_ref}[$comparison_column][1], "\n";
 				$number_of_matches += 1;
 			}
 			$comparison_column += 1;

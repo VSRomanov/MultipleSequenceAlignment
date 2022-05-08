@@ -1,7 +1,7 @@
 
 # Generic multiple sequence alignment (progressive alignment)
 
-The Perl module for alignment of any number of strings, composed of any symbols.
+The Perl module for multiple sequence alignment of any base objects.
 It is a considerably modified extension of Algorithm::NeedlemanWunsch pair alignment
  module (https://metacpan.org/pod/Algorithm::NeedlemanWunsch) created by Vaclav Barta.
 BioPerl module Bio::Tree (https://metacpan.org/dist/BioPerl) is used for construction of a guide tree.
@@ -16,9 +16,9 @@ Note: In case of several equally scored alignment solutions, the algorithm takes
 ## Background
 
 Multiple sequence alignment (MSA) allows to match several sequences altogether in order to compare similarities.
-Although there are several algorithms to achieve it, a progressive alignment is the most widely used approach.
+Although there are several algorithms for this purpose, progressive alignment is the most widely used approach. The distinctive feature of this implementation is that it offers progressive alignment in a generic way, i.e. sequence alignment of any base objects such as letters, numbers or complex data structures is possible. An overrideable match/mismatch function is provided for this purpose.
 
-A progressive alignment is built by combining pairwise alignments
+Progressive alignment is conducted by combining pairwise alignments
 beginning with the most similar pair and progressing to the most distantly related.
 There are two steps: 1) the relationships between the sequences are represented as a guide tree, and 
 2) the MSA is built by adding the strings sequentially to the growing MSA according

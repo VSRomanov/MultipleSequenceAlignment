@@ -16,7 +16,7 @@ Note: In case of several equally scored alignment solutions, the algorithm takes
 ## Background
 
 Multiple sequence alignment (MSA) allows to match several sequences altogether in order to compare similarities.
-Although there are several algorithms for this purpose, progressive alignment is the most widely used approach. The distinctive feature of this implementation is that it offers progressive alignment in a generic way, i.e. sequence alignment of any base objects such as letters, numbers or complex data structures is possible. An overrideable match/mismatch function is provided for this purpose.
+Although there are several algorithms for this purpose, progressive alignment is the most widely used approach. The distinctive feature of this implementation is that it offers progressive alignment in a generic way, i.e. sequence alignment of any base objects such as letters, numbers or even complex data structures is possible. An overrideable match/mismatch function is provided for this purpose.
 
 Progressive alignment is conducted by combining pairwise alignments
 beginning with the most similar pair and progressing to the most distantly related.

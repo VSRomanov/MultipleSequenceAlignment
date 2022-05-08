@@ -28,7 +28,7 @@ Initial pair alignments as well as second-step pairwise additions to the constru
 MSA are performed by two-sequence global alignment technique, the Needleman–Wunsch algorithm
 (https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm). Briefly, at first,
  a similarity matrix is constructed using match and mismatch scores, as well as gap penalty, 
- for each individual pair of symbols 
+ for each individual pair of base objects (e.g. symbols). 
 
  Noteworthy, the affine gap penalty is allowed in this implementation, 
  with two different costs: "gap opening penalty" >= "gap extension penalty".

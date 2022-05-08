@@ -7,7 +7,7 @@ It is a considerably modified extension of [Algorithm::NeedlemanWunsch pairwise 
 
 Match and mismatch scores, as well as affine gap penalty, can be defined freely, although there are defaults in the module.
 
-Provided by Dr. Vassily Romanov and Dr. Arne Sahm as part of their work at the [Leibniz Institute on Aging](https://www.leibniz-fli.de/).
+Provided by Dr. Vasily S. Romanov and Dr. Arne Sahm as part of their work at the [Leibniz Institute on Aging](https://www.leibniz-fli.de/).
 
 ## Background
 
@@ -15,11 +15,9 @@ There are several algorithms for the purpose of aligning more than two sequences
 
 [Progressive alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment#Progressive_alignment_construction) is conducted by combining pairwise alignments
 beginning with the most similar pair and progressing to the most distantly related.
-This process involves two main steps: 1) A guide tree is inferred to represent the similarity relationships between the sequences, and 
-2) the MSA is built by aligning sub-alignments sequentiallyfollowing the guide tree. In this implementation, the initial guide tree is determined by the [UPGMA clustering method](https://en.wikipedia.org/wiki/UPGMA).
+This process involves two main steps: 1) A guide tree is inferred to represent the similarity relationships between the sequences, and 2) the MSA is built by aligning sub-alignments sequentiallyfollowing the guide tree. In this implementation, the initial guide tree is determined by the [UPGMA clustering method](https://en.wikipedia.org/wiki/UPGMA).
 
-Initial pair alignments as well as second-step pairwise additions to the constructed
-MSA are performed by two-sequence global alignment technique, the [Needleman–Wunsch algorithm](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm). Briefly, at first,a similarity matrix is constructed using match and mismatch scores, as well as gap penalty, for each individual pair of base objects (e.g. symbols). 
+Initial pair alignments as well as second-step pairwise additions to the constructed MSA are performed by two-sequence global alignment technique, the [Needleman–Wunsch algorithm](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm). Briefly, at first,a similarity matrix is constructed using match and mismatch scores, as well as gap penalty, for each individual pair of base objects (e.g. symbols). 
 
 Noteworthy, this implementation supports use of affine gap costs, i.e. two different gap costs/scores: "gap opening penalty" >= "gap extension penalty".
 

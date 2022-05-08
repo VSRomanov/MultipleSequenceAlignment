@@ -7,7 +7,7 @@ It is a considerably modified extension of [Algorithm::NeedlemanWunsch pairwise 
 
 Match and mismatch scores, as well as affine gap penalty, can be defined freely, although there are defaults in the module.
 
-Provided by Dr. Vassily Romanov and Dr. Arne Sahm.
+Provided by Dr. Vassily Romanov and Dr. Arne Sahm as part of their work at the [Leibniz Institute on Aging](https://www.leibniz-fli.de/).
 
 ## Background
 

@@ -1,39 +1,28 @@
 
-# Generic multiple sequence alignment (progressive alignment)
+# Generic multiple sequence alignment
 
-The Perl module for multiple sequence alignment of any base objects.
-It is a considerably modified extension of Algorithm::NeedlemanWunsch pair alignment
- module (https://metacpan.org/pod/Algorithm::NeedlemanWunsch) created by Vaclav Barta.
-BioPerl module Bio::Tree (https://metacpan.org/dist/BioPerl) is used for construction of a guide tree.
+This Perl module enables multiple sequence alignment of any base objects such as symbols, numbers or data structures.
+It is a considerably modified extension of [Algorithm::NeedlemanWunsch pairwise alignment
+ module](https://metacpan.org/pod/Algorithm::NeedlemanWunsch) created by Vaclav Barta.
 
-Match and mismatch scores, as well as affine gap penalty, can be provided by a user,
-although there are defaults in the module.
+Match and mismatch scores, as well as affine gap penalty, can be defined freely, although there are defaults in the module.
 
-Note: In case of several equally scored alignment solutions, the algorithm takes only one.
-
-
+Provided by Dr. Vassily Romanov and Dr. Arne Sahm.
 
 ## Background
 
-Multiple sequence alignment (MSA) allows to match several sequences altogether in order to compare similarities.
-Although there are several algorithms for this purpose, progressive alignment is the most widely used approach. The distinctive feature of this implementation is that it offers progressive alignment in a generic way, i.e. sequence alignment of any base objects such as letters, numbers or even complex data structures is possible. An overrideable match/mismatch function is provided for this purpose.
+There are several algorithms for the purpose of aligning more than two sequences. However, progressive alignment is the most widely used approach. The distinctive feature of this implementation is that it offers progressive alignment in a generic way, i.e. sequence alignment of any base objects such as letters, numbers or even complex data structures is possible. An overrideable match/mismatch function is provided for this purpose.
 
-Progressive alignment is conducted by combining pairwise alignments
+[Progressive alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment#Progressive_alignment_construction) is conducted by combining pairwise alignments
 beginning with the most similar pair and progressing to the most distantly related.
-There are two steps: 1) the relationships between the sequences are represented as a guide tree, and 
-2) the MSA is built by adding the strings sequentially to the growing MSA according
- to the guide tree. In this implementation, the initial guide tree is determined by the UPGMA clustering method (https://en.wikipedia.org/wiki/UPGMA).
+This process involves two main steps: 1) A guide tree is inferred to represent the similarity relationships between the sequences, and 
+2) the MSA is built by aligning sub-alignments sequentiallyfollowing the guide tree. In this implementation, the initial guide tree is determined by the [UPGMA clustering method](https://en.wikipedia.org/wiki/UPGMA).
 
 Initial pair alignments as well as second-step pairwise additions to the constructed
-MSA are performed by two-sequence global alignment technique, the Needleman–Wunsch algorithm
-(https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm). Briefly, at first,
- a similarity matrix is constructed using match and mismatch scores, as well as gap penalty, 
- for each individual pair of base objects (e.g. symbols). 
+MSA are performed by two-sequence global alignment technique, the [Needleman–Wunsch algorithm](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm). Briefly, at first,a similarity matrix is constructed using match and mismatch scores, as well as gap penalty, for each individual pair of base objects (e.g. symbols). 
 
- Noteworthy, the affine gap penalty is allowed in this implementation, 
- with two different costs: "gap opening penalty" >= "gap extension penalty".
+Noteworthy, this implementation supports use of affine gap costs, i.e. two different gap costs/scores: "gap opening penalty" >= "gap extension penalty".
 
-Note: progressive alignment is heuristic, and is not guaranteed to converge to a global optimum.
 ## Usage
 Typical usage looks like this:
 

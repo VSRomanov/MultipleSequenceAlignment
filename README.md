@@ -16,13 +16,13 @@ Note: In case of several equally scored alignment solutions, the algorithm takes
 ## Background
 
 Multiple sequence alignment (MSA) allows to match several sequences altogether in order to compare similarities.
- Although there are several algorithms to achieve it, a progressive alignment is the most widely used approach.
+Although there are several algorithms to achieve it, a progressive alignment is the most widely used approach.
 
-Progressive method builds up a final MSA by combining pairwise alignments
+A progressive alignment is built by combining pairwise alignments
 beginning with the most similar pair and progressing to the most distantly related.
 There are two steps: 1) the relationships between the sequences are represented as a guide tree, and 
-2) the MSA is built by adding the strigs sequentially to the growing MSA according
- to the guide tree. In this implementation, the initial guide tree is determined by UPGMA clustering method (https://en.wikipedia.org/wiki/UPGMA).
+2) the MSA is built by adding the strings sequentially to the growing MSA according
+ to the guide tree. In this implementation, the initial guide tree is determined by the UPGMA clustering method (https://en.wikipedia.org/wiki/UPGMA).
 
 Initial pair alignments as well as second-step pairwise additions to the constructed
 MSA are performed by two-sequence global alignment technique, the Needleman–Wunsch algorithm

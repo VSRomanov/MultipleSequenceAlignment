@@ -21,6 +21,8 @@ Initial pair alignments as well as second-step pairwise additions to the constru
 
 Noteworthy, this implementation supports use of affine gap costs, i.e. two different gap costs/scores: "gap opening penalty" >= "gap extension penalty".
 
+Note: the implementation ignores letter cases: for example, an uppercase 'A' is aligned with a lowercase 'a' and considered matched.
+
 ## Usage
 Typical usage looks like this:
 

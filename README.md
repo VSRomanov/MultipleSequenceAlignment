@@ -1,6 +1,6 @@
 
 # Generic multiple sequence alignment
-This Perl module enables multiple sequence alignment of any base objects such as symbols, numbers or data structures. It is a considerably modified extension of [Algorithm::NeedlemanWunsch] pairwise alignment module (https://metacpan.org/pod/Algorithm::NeedlemanWunsch) created by Vaclav Barta. BioPerl module [Bio::Tree] (https://metacpan.org/dist/BioPerl) is used for construction of a guide tree.
+This Perl module enables multiple sequence alignment of any base objects such as symbols, numbers or data structures. It is a considerably modified extension of [Algorithm::NeedlemanWunsch](https://metacpan.org/pod/Algorithm::NeedlemanWunsch) pairwise alignment module created by Vaclav Barta. BioPerl module [Bio::Tree](https://metacpan.org/dist/BioPerl) is used for construction of a guide tree.
 
 Provided by Dr. Vasily S. Romanov and Dr. Arne Sahm as part of their work at the [Leibniz Institute on Aging](https://www.leibniz-fli.de/).
 
@@ -9,7 +9,7 @@ There are several algorithms for the purpose of aligning more than two sequences
 
 [Progressive alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment#Progressive_alignment_construction) is conducted by combining pairwise alignments beginning with the most similar pair and progressing to the most distantly related. This process involves two main steps: 1) A guide tree is inferred to represent the similarity relationships between the sequences, and 2) the multiple sequence alignment (MSA) is built by aligning sub-alignments sequentially following the guide tree. In this implementation, the initial guide tree is determined by the [UPGMA clustering method](https://en.wikipedia.org/wiki/UPGMA).
 
-Initial pair alignments as well as second-step pairwise additions to the constructed MSA are performed by two-sequence global alignment technique, the [Needleman–Wunsch algorithm](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm). Briefly, at first, a similarity matrix is constructed using match and mismatch scores, as well as gap penalties, for each individual pair of base objects (e.g. symbols). Then, tracing backwards from the the bottom right corner of the matrix to the top left allows to find the best alignment having the highest score.
+Initial pair alignments as well as second-step pairwise additions to the constructed MSA are performed by two-sequence global alignment technique, the [Needleman–Wunsch algorithm](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm). Briefly, at first, a similarity matrix is constructed using match and mismatch scores, as well as gap penalties, for each individual pair of base objects (e.g. symbols). Then, tracing backwards from the bottom right corner of the matrix to the top left one allows to find the best alignment having the highest score.
 
 ## Technical notes
 Match and mismatch scores, as well as affine gap penalty, can be defined freely, although there are defaults in the module.

@@ -1,8 +1,3 @@
-#!/usr/bin/perl
-## The shebang, to activate the script from the command line. Bash will read the first line of the script, and 
-## if it starts with a hash and a bang (hash-bang) #! then Bash will run execute the application 
-## that has its path on the hash-bang line (in our case /usr/bin/perl which is the standard location
-## of the perl compiler-interpreter on most modern Unix-like system).
 
 use lib "lib";
 use ProgressiveAlignment;

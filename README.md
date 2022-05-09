@@ -19,7 +19,7 @@ The implementation supports use of affine gap costs, i.e. two different gap pena
 The letter cases are ignored: for example, an uppercase 'A' is aligned with a lowercase 'a' and considered matched.
 
 ## Usage
-Typical usage:
+Typical usage of the module:
 
 
 ```

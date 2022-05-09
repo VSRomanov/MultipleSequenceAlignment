@@ -49,7 +49,7 @@ sub score_sub {
 
 ## getting sequences from FASTA file
 my $file = shift; 		## gets the first parameter from the BASH command line (filename here)
-$file="my_fasta.fa"; 	## FASTA file
+$file="my_fasta_test2.fa"; 	## FASTA file
 my $seqIO_object = Bio::SeqIO->new(-file => $file,      -format => "fasta");
 
 my %sequences;

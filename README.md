@@ -14,7 +14,7 @@ Initial pair alignments as well as second-step pairwise additions to the constru
 ## Technical notes
 Match and mismatch scores, as well as affine gap penalty, can be defined freely, although there are defaults in the module.
 
-The implementation supports use of affine gap costs, i.e. two different gap penalties: "gap opening penalty" >= "gap extension penalty".
+The implementation supports use of affine gap costs, i.e. two different gap penalties: |'gap opening penalty'| >= |'gap extension penalty'|.
 
 The letter cases are ignored: for example, an uppercase 'A' is aligned with a lowercase 'a' and considered matched.
 

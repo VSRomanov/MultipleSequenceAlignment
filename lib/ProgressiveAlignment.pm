@@ -206,14 +206,12 @@ sub align_profiles{
 						my $char_seq2=$seq2_array_structure[$seq2_pos][$j];
 						if (($char_seq1 ne "-") && ($char_seq2 ne "-")){
 							$score+=&{$self->{"score_sub"}}($char_seq1,$char_seq2)
-						} elsif (($char_seq1 eq "-") && ($char_seq2 ne "-")) {
-							$score+=(($seq1_pos>0) && (($extra_info eq "up_left") || ($seq1_array_structure[$seq1_pos-1][$i] eq "-"))) ? $self->{"gap_extend_penalty"} : $self->{"gap_open_penalty"};
-						} elsif (($char_seq2 eq "-") && ($char_seq1 ne "-")) {
-							$score+=(($seq2_pos>0) && (($extra_info eq "up_left") || ($seq2_array_structure[$seq2_pos-1][$j] eq "-"))) ? $self->{"gap_extend_penalty"} : $self->{"gap_open_penalty"};
-						}
+						} elsif ((($char_seq1 eq "-") && ($char_seq2 ne "-")) || (($char_seq2 eq "-") && ($char_seq1 ne "-"))) {
+							$score+= $self->{"gap_extend_penalty"};
+						} 
 					}
 				}
-			} 
+			}
 			elsif ($operation eq "gap_open") {
 				my ($seq_array_struct_with_gap,$seq_array_struct_without_gap,$pos_in_seq_with_gap,$pos_in_seq_without_gap) = ($extra_info eq "shift_in_seq1") ? (\@seq2_array_structure,\@seq1_array_structure,$seq2_pos,$seq1_pos) : (\@seq1_array_structure,\@seq2_array_structure,$seq1_pos,$seq2_pos);
 				

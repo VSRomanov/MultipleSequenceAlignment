@@ -125,8 +125,8 @@ sub align {
     												  
     												  
 
-	if ($self->{gap_open_penalty} >= $self->{gap_extend_penalty}) {
-		warn "gap_open_penalty is smaller than gap_extend_penalty. Did you do this by purpose?";
+	if ($self->{gap_open_penalty} > $self->{gap_extend_penalty}) {
+		warn "|'gap_open_penalty'| is smaller than |'gap_extend_penalty'|. Did you do this by purpose?";
     }
 	return $self->_align_affine($seq1_ref, $seq2_ref);
         
@@ -142,11 +142,11 @@ sub align {
 ## 					0 else	},
 ## where 
 ## 		"diag." matrix	D(i,j) = max (D(i-1,j-1), U(i-1,j-1), L(i-1,j-1)) + s(x_i,x_j),
-## 		"up" matrix 	U(i,j) = max (D(i-1,j)+d, U(i-1,j)+e, L(i-1,j) + d),
-## 		"left" matrix 	L(i,j) = max (D(i,j-1)+d, U(i,j-1)+d, L(i,j-1) + e),
+## 		"up" matrix 	U(i,j) = max (D(i-1,j) + d, U(i-1,j) + e, L(i-1,j) + d),
+## 		"left" matrix 	L(i,j) = max (D(i,j-1) + d, U(i,j-1) + d, L(i,j-1) + e),
 ##		s(x_i,x_j) - match/mismatch score at the (x_i,x_j) position,		
-##		d - gap opening penalty,
-##		e - gap extension penalty.
+##		d - gap opening penalty (negative value),
+##		e - gap extension penalty (negative value).
 sub _align_affine {
     my $self = shift; ## the object $matcher
     my $seq1_ref = shift;
